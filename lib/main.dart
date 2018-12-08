@@ -28,7 +28,7 @@ class RandomWordsState extends State<RandomWords> {
   final _suggestions = <WordPair>[];
   final _saved = new Set<WordPair>();
   final _biggerFont = const TextStyle(fontSize: 18.0);
-
+  int _count = 3;
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -44,7 +44,7 @@ class RandomWordsState extends State<RandomWords> {
 
   _pushToCard() {
     Navigator.of(context).push(new MaterialPageRoute(builder: (context) {
-      return LayoutCard();
+      return new LayoutCard(count: _count);
     }));
   }
 
@@ -83,6 +83,7 @@ class RandomWordsState extends State<RandomWords> {
             _saved.remove(pair);
           } else {
             _saved.add(pair);
+            _count++;
           }
         });
       },

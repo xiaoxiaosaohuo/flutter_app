@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/src/Components/GestureButton.dart';
 
 class LayoutCard extends StatelessWidget {
+  LayoutCard({this.count});
+  final int count;
   @override
   Widget build(BuildContext context) {
     Widget titleSection = Container(
@@ -14,14 +17,14 @@ class LayoutCard extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.only(bottom: 8.0),
                   child: Text(
-                    'Oeschinen Lake Campground',
+                    'Oeschinen Lake Campground1',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
                 Text(
-                  'Kandersteg, Switzerland',
+                  '$count',
                   style: TextStyle(
                     color: Colors.grey[500],
                   ),
@@ -97,7 +100,13 @@ Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese Alps. Situate
           titleSection,
           buttonSection,
           textSection,
+          GestureButton()
         ],
+      ),
+      floatingActionButton: new FloatingActionButton(
+        tooltip: 'Add', // used by assistive technologies
+        child: new Icon(Icons.add),
+        onPressed: null,
       ),
     );
   }
