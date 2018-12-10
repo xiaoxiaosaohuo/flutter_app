@@ -47,13 +47,13 @@ class ProductsManagerState extends State<ProductsManager> {
       Container(
         margin: EdgeInsets.all(10),
         child: RaisedButton(
-          child: Text('Add Card'),
+          child: Text('Add Card2'),
           color: Theme.of(context).primaryColor,
           onPressed: _addCard,
         ),
         alignment: Alignment.center,
       ),
-      new Products(_products)
+      Expanded(child: new Products(_products))
     ]);
   }
 }
