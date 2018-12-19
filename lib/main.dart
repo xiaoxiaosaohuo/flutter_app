@@ -1,28 +1,73 @@
 import 'package:flutter/material.dart';
+import './src/routes/route1.dart';
+void main() => runApp(new MyApp());
 
-import './src/products/productsManager.dart';
-
-void main() => runApp(new App());
-
-class App extends StatelessWidget {
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
-      title: "欢迎使用flutter",
+      title: 'Counter',
       theme: new ThemeData(
-        primaryColor: Colors.blue,
         primarySwatch: Colors.blue,
       ),
-      home: new ListCard(),
+      home: new MyHomePage(title: 'Counter'),
     );
   }
 }
 
-class ListCard extends StatelessWidget {
+class MyHomePage extends StatefulWidget {
+  MyHomePage({Key key, this.title}) : super(key: key);
+  final String title;
+
+  @override
+  _MyHomePageState createState() => new _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  int _counter = 0;
+
+  void _incrementCounter() {
+    setState(() {
+      _counter++;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-        appBar: AppBar(title: Text("Demo")),
-        body: ProductsManager(initialProduct: "陆涛"));
+      appBar: new AppBar(
+        title: new Text(widget.title),
+      ),
+      body: new Center(
+        child: new Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            new Text(
+              'You have pushed the button this many times:',
+            ),
+            new Text(
+              '$_counter',
+              style: Theme.of(context).textTheme.display2,
+            ),
+            FlatButton(
+              child: Text('打开新页面'),
+              textColor: Colors.blue,
+              onPressed: (){
+                Navigator.push(context, 
+                 new MaterialPageRoute(builder: (context) {
+                  return new Route1();
+                })
+                );
+              },
+            )
+          ],
+        ),
+      ),
+      floatingActionButton: new FloatingActionButton(
+        onPressed: _incrementCounter,
+        tooltip: 'Increment',
+        child: new Icon(Icons.add),
+      ), // This trailing comma makes auto-formatting nicer for build methods.
+    );
   }
 }
