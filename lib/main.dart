@@ -13,16 +13,16 @@ class App extends StatelessWidget {
         primaryColor: Colors.blue,
         primarySwatch: Colors.blue,
       ),
-      home: new ImageCard(),
+      home: new ListCard(),
     );
   }
 }
 
-class ImageCard extends StatelessWidget {
+class ListCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-        appBar: AppBar(title: Text("EasyList")),
-        body: ProductsManager(initialProduct: "陆涛1"));
+        appBar: AppBar(title: Text("Demo")),
+        body: ProductsManager(initialProduct: "陆涛"));
   }
 }

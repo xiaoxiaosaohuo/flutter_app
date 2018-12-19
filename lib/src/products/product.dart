@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 class Products extends StatelessWidget {
   final List<String> products;
-  Products([this.products = const []]) {
-    print('[Products Widget] Constructor');
+  Products(this.products) {
+    print('[Products Widget] Constructor:${this.products}');
   }
   @override
   Widget build(BuildContext context) {
