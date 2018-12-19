@@ -1,35 +1,58 @@
 import 'package:flutter/material.dart';
+import 'dart:convert';
 import './src/routes/route1.dart';
+
+import 'dart:async' show Future;
+import 'package:flutter/services.dart' show rootBundle;
 void main() => runApp(new MyApp());
 
+
+Future<String> loadAsset() async {
+  return await rootBundle.loadString('assets/config.json');
+}
+void _loadJson() {
+  loadAsset().then((value){
+    JsonDecoder decoder = new JsonDecoder();
+    var json = decoder.convert(value);
+    print(json['title']);
+  });
+}
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    _loadJson();
     return new MaterialApp(
       title: 'Counter',
       theme: new ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: new MyHomePage(title: 'Counter'),
+      home: new MyHomePage(title: 'Counter',initValue: 3,),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage({Key key, this.title, this.initValue: 1}) : super(key: key);
   final String title;
-
+  final int initValue;
   @override
   _MyHomePageState createState() => new _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+  int _counter ;
 
   void _incrementCounter() {
     setState(() {
       _counter++;
     });
+  }
+  @override
+  void initState() {
+    super.initState();
+    //初始化状态  
+    _counter=widget.initValue;
+    print("initState");
   }
 
   @override
