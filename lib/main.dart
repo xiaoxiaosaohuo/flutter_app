@@ -13,7 +13,7 @@ Future<String> loadAsset() async {
 void _loadJson() {
   loadAsset().then((value){
     JsonDecoder decoder = new JsonDecoder();
-    var json = decoder.convert(value);
+    Map<String, dynamic> json = decoder.convert(value);
     print(json['title']);
   });
 }
