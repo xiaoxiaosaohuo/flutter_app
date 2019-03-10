@@ -30,6 +30,14 @@ class RandomWordsState extends State<RandomWords> {
   final _biggerFont = const TextStyle(fontSize: 18.0);
   int _count = 3;
   @override
+  void initState() {
+    // TODO: implement initState
+    // super.initState();
+	setState((){
+          _suggestions.addAll(generateWordPairs().take(10));
+	});
+  }
+  @override
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
@@ -49,19 +57,14 @@ class RandomWordsState extends State<RandomWords> {
   }
 
   Widget _buildSuggestions() {
-    return new ListView.builder(
+    return new ListView.separated(
       padding: const EdgeInsets.all(16.0),
+	  separatorBuilder: (context, index) => Divider(
+        // color: Colors.black,
+      ),
+	  itemCount: _suggestions.length,
       itemBuilder: (context, i) {
-        if (i.isOdd) {
-          return new Divider();
-        }
-        final index = i ~/ 2;
-
-        if (index >= _suggestions.length) {
-          // ...接着再生成10个单词对，然后添加到建议列表
-          _suggestions.addAll(generateWordPairs().take(10));
-        }
-        return _buildRow(_suggestions[index]);
+        return _buildRow(_suggestions[i]);
       },
     );
   }
@@ -69,10 +72,14 @@ class RandomWordsState extends State<RandomWords> {
   Widget _buildRow(WordPair pair) {
     final alreadySaved = _saved.contains(pair);
     return new ListTile(
-      title: new Text(
+      title:
+	  Opacity(
+		opacity: .8,
+		child: new Text(
         pair.asPascalCase,
         style: _biggerFont,
       ),
+		) ,
       trailing: new Icon(
         alreadySaved ? Icons.favorite : Icons.favorite_border,
         color: alreadySaved ? Colors.red : null,
