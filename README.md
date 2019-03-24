@@ -9,6 +9,15 @@
 ```
 rm ./flutter/bin/cache/lockfile
 ```
+3. pod install 
+```
+Errno::EACCES - Permission denied @ dir_s_rmdir -
+    /Users/jinxin/Library/Caches/CocoaPods/Pods
+```
+解决方法
+```
+sudo chown -R jinxin /Users/jinxin/Library/Caches/CocoaPods
+```
 
 
 
