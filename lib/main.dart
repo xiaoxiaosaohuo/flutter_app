@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/src/caculator/caculator.dart';
+import 'package:flutter_app/src/dataTableDemo.dart';
 
 void main ()=>runApp(App());
 class App extends StatelessWidget {
@@ -7,7 +7,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Title',
-      home: Caculator(),
+      home: DataTableDemo(),
     );
   }
 }
