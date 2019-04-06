@@ -1,27 +1,24 @@
-import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_app/src/whatsapp_home.dart';
-import 'package:camera/camera.dart';
+import 'package:flutter_app/src/instagram_home.dart';
 
-List<CameraDescription> cameras;
-
-Future<Null> main() async {
-  cameras = await availableCameras();
-  runApp(new MyApp());
-}
-
+void main()=>runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
-      title: "WhatsApp",
+      title: "Instagram",
       theme: new ThemeData(
-        primaryColor: new Color(0xff075E54),
-        accentColor: new Color(0xff25D366),
+        primarySwatch: Colors.blue,
+        primaryColor: Colors.black,
+        primaryIconTheme: IconThemeData(color: Colors.black),
+        primaryTextTheme: TextTheme(
+           title: TextStyle(color: Colors.black, fontFamily: "Aveny"),
+        ),
+        textTheme: TextTheme(title: TextStyle(color: Colors.black))
       ),
-      debugShowCheckedModeBanner: false,
-      home: new WhatsAppHome(cameras),
+      // debugShowCheckedModeBanner: true,
+      home: new InstagramHome(),
     );
   }
 }
