@@ -3,6 +3,18 @@
 # 踩坑记录
 
 1. hotreload
-在模拟器中有可能无法热更新，解决方法,修改Info.plist中的Bundle identifier
+在模拟器中有可能无法热更新，解决方法
+2. Waiting for another flutter command to release the startup lock...
 
-![image](https://github.com/jinxin479/flutter_app/blob/master/assets/snapshot/1.png)
+```
+rm ./flutter/bin/cache/lockfile
+```
+3. pod install 
+```
+Errno::EACCES - Permission denied @ dir_s_rmdir -
+    /Users/jinxin/Library/Caches/CocoaPods/Pods
+```
+解决方法
+```
+sudo chown -R jinxin /Users/jinxin/Library/Caches/CocoaPods
+```
