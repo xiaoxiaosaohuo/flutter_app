@@ -18,7 +18,7 @@ class SizeBoxDemo extends StatelessWidget{
 					children: <Widget>[
 						SizedBox(
 							width: 100.0,
-             				height: 100.0,
+             	height: 100.0,
 							child: RandomContainer(
 								width: 50,
 								height: 50,
