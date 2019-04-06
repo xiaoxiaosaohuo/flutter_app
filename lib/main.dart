@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         ),
         textTheme: TextTheme(title: TextStyle(color: Colors.black))
       ),
-      // debugShowCheckedModeBanner: true,
+      debugShowCheckedModeBanner: false,
       home: new InstagramHome(),
     );
   }
