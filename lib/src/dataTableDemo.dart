@@ -83,8 +83,8 @@ class Name{
 
 var names = <Name>[
   Name(firstName: "鑫",lastName: "金"),
-  Name(firstName: "1",lastName: "金"),
-  Name(firstName: "2",lastName: "金"),
-  Name(firstName: "3",lastName: "金"),
-  Name(firstName: "4",lastName: "金"),
+  Name(firstName: "1",lastName: "金1"),
+  Name(firstName: "2",lastName: "金2"),
+  Name(firstName: "3",lastName: "金3"),
+  Name(firstName: "4",lastName: "金4"),
 ];
