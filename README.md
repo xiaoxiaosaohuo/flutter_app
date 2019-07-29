@@ -1,5 +1,11 @@
 # flutter_app
 
+
+# 项目规划
+- 记录学习的demo
+- 尽量搭建一个完整的项目，各demo间可以路由跳转
+- 保证demo代码质量
+
 # 踩坑记录
 
 1. hotreload
