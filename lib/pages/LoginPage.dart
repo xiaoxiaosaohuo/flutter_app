@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../routers/application.dart';
 
 class LoginPage extends StatefulWidget{
   @override
@@ -29,6 +30,9 @@ class  LoginPageState extends State<LoginPage>  with SingleTickerProviderStateMi
     _iconAnimationController.forward();
 
   }
+  onPressed(){
+     Application.router.navigateTo(context, "/home");
+  }
   @override
   Widget build(BuildContext context) {
       // TODO: implement build
@@ -50,7 +54,7 @@ class  LoginPageState extends State<LoginPage>  with SingleTickerProviderStateMi
                   labelStyle: TextStyle(color: Colors.tealAccent,fontSize: 25.0)
                 )
               ),
-              isMaterialAppTheme: true,
+              isMaterialAppTheme: false,
               child: Column(
 				mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
@@ -85,7 +89,7 @@ class  LoginPageState extends State<LoginPage>  with SingleTickerProviderStateMi
 								splashColor: Colors.teal,
 								textColor: Colors.white,
 								child: Text("登录"),
-								onPressed: () {},
+								onPressed:this.onPressed,
 							)
                         ],
                       ),
