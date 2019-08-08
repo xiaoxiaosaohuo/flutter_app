@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-// import '../routers/application.dart';
+import 'package:flutter_app/widgets/animation/animate01.dart';
 
 class AnimationPage extends StatefulWidget{
   @override
@@ -14,7 +14,7 @@ class AnimationPageState extends State<AnimationPage>{
   Widget build(BuildContext context) {
     return Scaffold(
         body:Center(
-          child: Text("Animation"),
+          child: Animate01(),
         )
       );
   }
