@@ -2,19 +2,19 @@ import 'package:flutter/material.dart';
 
 // import '../routers/application.dart';
 
-class HomePage extends StatefulWidget{
+class WidgetPage extends StatefulWidget{
   @override
     State<StatefulWidget> createState() {
-      return HomePageState();
+      return WidgetPageState();
     }
 }
 
-class HomePageState extends State<HomePage>{
+class WidgetPageState extends State<WidgetPage>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         body:Center(
-          child: Text("HomePage"),
+          child: Text("WidgetPage"),
         )
       );
   }
