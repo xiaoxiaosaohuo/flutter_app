@@ -13,6 +13,9 @@ class WidgetPageState extends State<WidgetPage>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+       appBar: AppBar(
+          title: Text("Widget"),
+        ),
         body:Center(
           child: Text("WidgetPage"),
         )

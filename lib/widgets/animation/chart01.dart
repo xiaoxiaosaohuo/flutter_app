@@ -16,17 +16,22 @@ class _Chart01State extends State<Chart01>{
   }
   @override
     Widget build(BuildContext context) {
-      return Container(
-        child: Center(
-          child: CustomPaint(
-            size: Size(200.0, 100.0),
-            painter: BarChartPainter(dataSet.toDouble()),
-          ),
+      return Scaffold(
+        appBar: AppBar(
+          title: Text("Animate"),
         ),
-        // floatingActionButton: FloatingActionButton(
-        //   child: Icon(Icons.refresh),
-        //   onPressed: changeData,
-        // ),
+        body: Container(
+          child: Center(
+            child: CustomPaint(
+              size: Size(200.0, 100.0),
+              painter: BarChartPainter(dataSet.toDouble()),
+            ),
+          ),
+      ),
+      floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.refresh),
+          onPressed: changeData,
+        ),
       );
     }
 }
