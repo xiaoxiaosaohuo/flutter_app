@@ -7,6 +7,7 @@ class Routes{
   static String home = "/main";
   static String login = "/login";
   static String animation = '/animation';
+  static String chart = '/chart';
   static void configureRoutes(Router router) {
     router.notFoundHandler = new Handler(
         handlerFunc: (BuildContext context, Map<String, List<String>> params) {
@@ -16,5 +17,6 @@ class Routes{
     router.define(login, handler: loginHandler);
     router.define(home, handler: mainHandler);
     router.define(animation,handler: animationHandler);
+    router.define(chart,handler:chart01Handler);
   }
 }

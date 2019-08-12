@@ -34,9 +34,9 @@ class _MainPageState extends State<MainPage>{
   @override
     Widget build(BuildContext context) {
       return Scaffold(
-        appBar: AppBar(
-          title: Text("Flutter"),
-        ),
+        // appBar: AppBar(
+        //   title: Text("Flutter"),
+        // ),
         bottomNavigationBar:BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
           currentIndex: _currentIndex,
