@@ -9,34 +9,26 @@ class Chart01 extends StatefulWidget{
 class _Chart01State extends State<Chart01> with TickerProviderStateMixin{
   final random = Random();
   int dataSet = 50;
-  AnimationController animation;
+  AnimationController animationController;
+  Tween<double> tween;
   double startHeight;   // Strike one.
   double currentHeight; // Strike two.
   double endHeight;     // Strike three. Refactor.
   @override
   void initState() {
     super.initState();
-    animation = AnimationController(duration: Duration(milliseconds: 500),vsync: this)
-                ..addListener((){
-                  setState((){
-                    currentHeight = lerpDouble( // Strike one.
-                      startHeight,
-                      endHeight,
-                      animation.value,
-                    );
-                  });
-                }); 
-    startHeight = 0.0;                // Strike two.
-    currentHeight = 0.0;
-    endHeight = dataSet.toDouble();
-    animation.forward(); 
+    animationController = AnimationController(duration: Duration(milliseconds: 500),vsync: this);
+    tween = Tween<double>(begin: 0.0,end:dataSet.toDouble());
+    animationController.forward(); 
   }
   void changeData() {
     setState(() {
-      startHeight = currentHeight;    // Strike three. Refactor.
       dataSet = random.nextInt(100);
-      endHeight = dataSet.toDouble();
-      animation.forward(from: 0.0);
+      tween = Tween<double>(
+        begin: tween.evaluate(animationController),
+        end:dataSet.toDouble()
+      );
+      animationController.forward(from: 0.0);
     });
   }
   @override
@@ -49,7 +41,7 @@ class _Chart01State extends State<Chart01> with TickerProviderStateMixin{
           child: Center(
             child: CustomPaint(
               size: Size(200.0, 100.0),
-              painter: BarChartPainter(currentHeight),
+              painter: BarChartPainter(tween.animate(animationController)),
             ),
           ),
       ),
@@ -61,7 +53,7 @@ class _Chart01State extends State<Chart01> with TickerProviderStateMixin{
     }
     @override
   void dispose() {
-    animation.dispose();
+    animationController.dispose();
     super.dispose();
   }
 }
@@ -69,11 +61,12 @@ class _Chart01State extends State<Chart01> with TickerProviderStateMixin{
 
 class BarChartPainter extends CustomPainter{
   static const barWidth = 10.0;
-  BarChartPainter(this.barHeight);
-  final double barHeight;
+  BarChartPainter(this.animation):super(repaint:animation);
+  final Animation<double> animation;
 
   @override
     void paint(Canvas canvas, Size size) {
+      final  barHeight = animation.value;
       final paint = Paint()
       ..color = Colors.blue[400]
       ..style = PaintingStyle.fill;
@@ -86,5 +79,5 @@ class BarChartPainter extends CustomPainter{
         paint);
     }
     @override
-    bool shouldRepaint(BarChartPainter old) => barHeight != old.barHeight;
+    bool shouldRepaint(BarChartPainter old) => false;
 }
