@@ -38,8 +38,13 @@ class  LoginPageState extends State<LoginPage>  with SingleTickerProviderStateMi
       // TODO: implement build
       return Scaffold(
         backgroundColor: Colors.white,
-        body: Stack(
-          fit: StackFit.expand,
+        body: SingleChildScrollView(
+          child:ConstrainedBox(
+             constraints: BoxConstraints(
+              minHeight: MediaQuery.of(context).size.height,
+          ),
+          child: Stack(  
+          fit: StackFit.passthrough,
           children: <Widget>[
             Image(
               image: AssetImage("assets/images/girl.jpeg"),
@@ -56,50 +61,52 @@ class  LoginPageState extends State<LoginPage>  with SingleTickerProviderStateMi
               ),
               isMaterialAppTheme: false,
               child: Column(
-				mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  FlutterLogo(size: _iconAnimation.value * 140.0),
-                  Container(
-					padding: const EdgeInsets.all(40.0),
-                    child: Form(
-                      child: Column(
-                        children: <Widget>[
-                          TextFormField(
-                            decoration:InputDecoration(
-                              labelText: '输入邮箱',
-                              fillColor: Colors.white,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    FlutterLogo(size: _iconAnimation.value * 140.0),
+                    Container(
+                      padding: const EdgeInsets.all(40.0),
+                      child: Form(
+                        child: Column(
+                          children: <Widget>[
+                            TextFormField(
+                              decoration:InputDecoration(
+                                labelText: '输入邮箱',
+                                fillColor: Colors.white,
+                              ),
+                              keyboardType: TextInputType.emailAddress,
                             ),
-                             keyboardType: TextInputType.emailAddress,
-                          ),
-                          TextFormField(
-                            decoration:InputDecoration(
-                              labelText: '输入密码',
-                              fillColor: Colors.white,
+                            TextFormField(
+                              decoration:InputDecoration(
+                                labelText: '输入密码',
+                                fillColor: Colors.white,
+                              ),
+                              obscureText: true,
+                              keyboardType: TextInputType.text,
                             ),
-                            obscureText: true,
-                             keyboardType: TextInputType.text,
+                            Padding(
+                              padding: const EdgeInsets.only(top: 60.0),
                           ),
-                          Padding(
-                          	padding: const EdgeInsets.only(top: 60.0),
-                     		),
-							new MaterialButton(
-								height: 50.0,
-								minWidth: 150.0,
-								color: Colors.green,
-								splashColor: Colors.teal,
-								textColor: Colors.white,
-								child: Text("登录"),
-								onPressed:this.onPressed,
-							)
-                        ],
+                            new MaterialButton(
+                              height: 50.0,
+                              minWidth: 150.0,
+                              color: Colors.green,
+                              splashColor: Colors.teal,
+                              textColor: Colors.white,
+                              child: Text("登录"),
+                              onPressed:this.onPressed,
+                            )
+                          ],
+                        ),
                       ),
-                    ),
                     )
-                ],
-              ),
-            )
-          ],
+                  ],
+                ),
+              )
+              ],
+          ),
         )
-      );
-    }
+      )
+    );
+  }
 }
