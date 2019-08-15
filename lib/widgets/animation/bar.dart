@@ -24,6 +24,7 @@ class BarChart {
 
   factory BarChart.random(Random random){
     final Color color = ColorPalette.primary.random(random);
+    // 生成bar 列表
     return BarChart(List.generate(barCount, (i)=>Bar(random.nextDouble() * 100.0,color)));
   }
 
@@ -66,11 +67,11 @@ class Bar {
 }
 
 
-class BarTween extends Tween<Bar> {
-  BarTween(Bar begin,Bar end): super(begin:begin,end:end);
-  @override
-  Bar lerp(double t)=>Bar.lerp(begin,end,t);
-}
+// class BarTween extends Tween<Bar> {
+//   BarTween(Bar begin,Bar end): super(begin:begin,end:end);
+//   @override
+//   Bar lerp(double t)=>Bar.lerp(begin,end,t);
+// }
 
 class BarChartPainter extends CustomPainter {
   static const barWidthFraction = 0.75;
