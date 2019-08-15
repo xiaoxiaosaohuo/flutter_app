@@ -1,14 +1,30 @@
 import 'dart:ui' show lerpDouble;
+import 'dart:math';
 import 'package:flutter/animation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'color_palette.dart';
+
 
 class Bar {
-  Bar(this.height);
+  Bar(this.height,this.color);
   final double height;
+  final Color color;
 
   static Bar lerp(Bar begin,Bar end,double t){
-    return Bar(lerpDouble(begin.height, end.height, t));
+    return Bar(
+      lerpDouble(begin.height, end.height, t),
+      Color.lerp(begin.color,end.color,t)
+      );
+  }
+  
+  factory Bar.empty() => Bar(0.0,Colors.transparent);
+
+  factory Bar.random(Random random){
+    return Bar(
+      random.nextDouble() * 100.0,
+        Color(random.nextInt(100))
+      );
   }
 }
 
