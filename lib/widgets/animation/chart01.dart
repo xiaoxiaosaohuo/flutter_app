@@ -8,19 +8,26 @@ class Chart01 extends StatefulWidget{
 }
 
 class _Chart01State extends State<Chart01> with TickerProviderStateMixin{
+  static const size = const Size(200.0, 100.0);
   final random = Random();
+  
   AnimationController animationController;
   BarChartTween tween;// Strike three. Refactor.
+
+
   @override
   void initState() {
     super.initState();
     animationController = AnimationController(duration: Duration(milliseconds: 500),vsync: this);
-    tween = BarChartTween(BarChart.empty(),BarChart.random(random));
+    tween = BarChartTween(
+        BarChart.empty(size),
+        BarChart.random(size, random),
+    );
     animationController.forward(); 
   }
   void changeData() {
     setState(() {
-      tween = BarChartTween(tween.evaluate(animationController),BarChart.random(random));
+      tween = BarChartTween(tween.evaluate(animationController),BarChart.random(size,random));
       animationController.forward(from: 0.0);
     });
   }
