@@ -2,26 +2,25 @@ import 'package:flutter/material.dart';
 import 'dart:math';
 import 'dart:ui' show lerpDouble;
 import 'bar.dart';
+
 class Chart01 extends StatefulWidget{
   _Chart01State createState()=>_Chart01State();
 }
 
 class _Chart01State extends State<Chart01> with TickerProviderStateMixin{
   final random = Random();
-  int dataSet = 50;
   AnimationController animationController;
-  BarTween tween;    // Strike three. Refactor.
+  BarChartTween tween;// Strike three. Refactor.
   @override
   void initState() {
     super.initState();
     animationController = AnimationController(duration: Duration(milliseconds: 500),vsync: this);
-    tween = BarTween(Bar(0.0),Bar(50.0));
+    tween = BarChartTween(BarChart.empty(),BarChart.random(random));
     animationController.forward(); 
   }
   void changeData() {
     setState(() {
-      dataSet = random.nextInt(100);
-      tween = BarTween(tween.evaluate(animationController),Bar(random.nextDouble() * 100.0));
+      tween = BarChartTween(tween.evaluate(animationController),BarChart.random(random));
       animationController.forward(from: 0.0);
     });
   }
