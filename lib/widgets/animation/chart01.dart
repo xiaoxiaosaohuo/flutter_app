@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 import 'dart:ui' show lerpDouble;
-import 'bar.dart';
+import 'group_stack_bar.dart';
 
 class Chart01 extends StatefulWidget{
   _Chart01State createState()=>_Chart01State();
