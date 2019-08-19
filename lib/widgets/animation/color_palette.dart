@@ -45,4 +45,3 @@ class ColorPalette {
 
   Color random(Random random) => this[random.nextInt(_colors.length)];
 }
- @xiaoxiaosaohuo
