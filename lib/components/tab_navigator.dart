@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/components/bottom_navigation.dart';
 import 'package:flutter_app/pages/color_detail_page.dart';
 import 'package:flutter_app/pages/colors_list_page.dart';
-
+import 'package:flutter_app/pages/input_page.dart';
 class TabNavigatorRoutes {
   static const String root = '/';
   static const String detail = '/detail';
+  static const String person = '/person';
 }
 
 class TabNavigator extends StatelessWidget {
@@ -38,17 +39,25 @@ class TabNavigator extends StatelessWidget {
             title: TabHelper.description(tabItem),
             materialIndex: materialIndex,
           ),
+      TabNavigatorRoutes.person: (context) => InputPage(
+            // color: TabHelper.color(tabItem),
+            // title: TabHelper.description(tabItem),
+            // materialIndex: materialIndex,
+          ),
     };
   }
 
   @override
   Widget build(BuildContext context) {
     var routeBuilders = _routeBuilders(context);
-
+        print("得看数据地方11");
+          print(tabItem == TabItem.blue);
     return Navigator(
         key: navigatorKey,
-        initialRoute: TabNavigatorRoutes.root,
+        initialRoute: tabItem == TabItem.blue? TabNavigatorRoutes.person:TabNavigatorRoutes.root,
         onGenerateRoute: (routeSettings) {
+          print("得看数据地方");
+          print(routeSettings);
           return MaterialPageRoute(
             builder: (context) => routeBuilders[routeSettings.name](context),
           );

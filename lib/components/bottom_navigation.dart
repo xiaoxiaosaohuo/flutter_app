@@ -59,8 +59,10 @@ class BottomNavigation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final selectedIndex =currentTab.index;
     return BottomNavigationBar(
       type: BottomNavigationBarType.fixed,
+      currentIndex: selectedIndex,
       items: [
         _buildItem(tabItem: TabItem.red),
         _buildItem(tabItem: TabItem.green),
