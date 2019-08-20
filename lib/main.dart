@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget{
           primaryColor: Colors.blue,
           ),
         home:LoginPage(),
-        onGenerateRoute: Application.router.generator,
+        // onGenerateRoute: Application.router.generator,
       );
     }
 }
