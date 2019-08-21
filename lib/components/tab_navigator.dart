@@ -50,13 +50,12 @@ class TabNavigator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var routeBuilders = _routeBuilders(context);
-        print("得看数据地方11");
-          print(tabItem == TabItem.blue);
+        
     return Navigator(
         key: navigatorKey,
-        initialRoute: tabItem == TabItem.blue? TabNavigatorRoutes.person:TabNavigatorRoutes.root,
+        initialRoute: TabNavigatorRoutes.root,
         onGenerateRoute: (routeSettings) {
-          print("得看数据地方");
+          print("得看数据地方11");
           print(routeSettings);
           return MaterialPageRoute(
             builder: (context) => routeBuilders[routeSettings.name](context),

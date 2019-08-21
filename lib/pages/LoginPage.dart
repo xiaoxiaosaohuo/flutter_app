@@ -31,7 +31,7 @@ class  LoginPageState extends State<LoginPage>  with SingleTickerProviderStateMi
 
   }
   onPressed(){
-     Application.router.navigateTo(context, "/main");
+     Application.router.navigateTo(context, "/main", replace: true);
   }
   @override
   Widget build(BuildContext context) {
