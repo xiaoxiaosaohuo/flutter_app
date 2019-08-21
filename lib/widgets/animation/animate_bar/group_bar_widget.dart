@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
-import 'package:flutter_app/widgets/animation/group_bar.dart';
+import 'package:flutter_app/widgets/animation/animate_bar/group_bar.dart';
 
 class GroupBar extends StatefulWidget{
   _GroupBarState createState()=>_GroupBarState();
 }
 
 class _GroupBarState extends State<GroupBar> with TickerProviderStateMixin{
-  static const size = const Size(200.0, 100.0);
+  static const size = const Size(300.0, 300.0);
   final random = Random();
   
   AnimationController animationController;
@@ -32,23 +32,32 @@ class _GroupBarState extends State<GroupBar> with TickerProviderStateMixin{
   }
   @override
     Widget build(BuildContext context) {
-      return Scaffold(
-        appBar: AppBar(
-          title: Text("Stack-Bar"),
-        ),
-        body: Container(
-          child: Center(
-            child: CustomPaint(
-              size: Size(200,100),
-              painter: BarChartPainter(tween.animate(animationController)),
+      return Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Container(
+            child: Center(
+              child: CustomPaint(
+                size: Size(300,300),
+                painter: BarChartPainter(tween.animate(animationController)),
+              ),
             ),
           ),
-      ),
-      floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.add),
-          onPressed: changeData,
-        ),
+          SizedBox(height: 20),
+          RaisedButton(
+            color: Colors.red,
+            child: Text('refresh'),
+            onPressed:this.changeData,
+            shape: BeveledRectangleBorder(
+              side: BorderSide(
+                color: Colors.white,
+              ),
+              borderRadius: BorderRadius.all(Radius.circular(10))
+            ),
+          )
+        ],
       );
+      
     }
     @override
   void dispose() {

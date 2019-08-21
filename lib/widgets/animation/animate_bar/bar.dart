@@ -3,8 +3,7 @@ import 'dart:ui' show lerpDouble;
 
 import 'package:flutter/animation.dart';
 import 'package:flutter/material.dart';
-
-import 'color_palette.dart';
+import 'package:flutter_app/widgets/animation/animate_bar/color_palette.dart';
 
 class BarChart {
   BarChart(this.bars);
