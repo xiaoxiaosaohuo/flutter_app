@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fluro/fluro.dart';
 import 'package:flutter_app/pages/LoginPage.dart';
 import 'package:flutter_app/pages/animation_page.dart';
-import 'package:flutter_app/widgets/animation/stack_bar_page.dart';
-import 'package:flutter_app/widgets/animation/group_stack_bar_page.dart';
-import 'package:flutter_app/widgets/animation/group_bar_page.dart';
+import 'package:flutter_app/pages/bar_page.dart';
 import 'package:flutter_app/pages/main_page.dart';
 // app的首页
 Handler mainHandler = new Handler(
@@ -27,24 +25,11 @@ Handler animationHandler = new Handler(
   },
 );
 
-Handler stackBarHandler = new Handler(
+Handler barPageHandler = new Handler(
   handlerFunc: (BuildContext context, Map<String, List<String>> params) {
 
-    return new StackBar();
-  },
-);
-
-Handler groupStackBarHandler = new Handler(
-  handlerFunc: (BuildContext context, Map<String, List<String>> params) {
-
-    return new GroupStackBar();
-  },
-);
-
-Handler groupBarHandler = new Handler(
-  handlerFunc: (BuildContext context, Map<String, List<String>> params) {
-
-    return new GroupBar();
+    String pageName = params['pageName']?.first;
+    return new BarPage(name:pageName);
   },
 );
 

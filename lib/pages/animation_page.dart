@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_app/widgets/animation/animate01.dart';
 import 'package:flutter_app/widgets/animation/animate02.dart';
-import 'package:flutter_app/widgets/animation/chart01.dart';
 import '../routers/application.dart';
 
 
@@ -16,12 +15,12 @@ class AnimationPage extends StatefulWidget{
 
 class AnimationPageState extends State<AnimationPage>{
 
-  final List<String> items = <String>['stack_bar', 'group_bar', 'group_stack_bar'];
-  final List<int> colorCodes = <int>[900, 500, 300];
+  final List<String> items = <String>['bar','stack_bar', 'group_bar', 'group_stack_bar'];
+  final List<int> colorCodes = <int>[900, 700, 500,300];
 
   onPressed(item){
     if(items.indexOf(item) > -1){
-      Application.router.navigateTo(context, '/$item');
+      Application.router.navigateTo(context, '/bar_page?pageName=$item',);
     }
   }
 
