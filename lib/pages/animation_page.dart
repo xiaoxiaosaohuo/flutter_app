@@ -4,6 +4,8 @@ import 'package:flutter_app/widgets/animation/animate01.dart';
 import 'package:flutter_app/widgets/animation/animate02.dart';
 import 'package:flutter_app/widgets/animation/chart01.dart';
 import '../routers/application.dart';
+
+
 class AnimationPage extends StatefulWidget{
   AnimationPage();
   @override
@@ -13,13 +15,16 @@ class AnimationPage extends StatefulWidget{
 }
 
 class AnimationPageState extends State<AnimationPage>{
-  final List<String> items = <String>['A', 'B', 'C'];
-  final List<int> colorCodes = <int>[600, 500, 100];
+
+  final List<String> items = <String>['stack_bar', 'group_bar', 'group_stack_bar'];
+  final List<int> colorCodes = <int>[900, 500, 300];
+
   onPressed(item){
-    if (item == 'A'){
-      Application.router.navigateTo(context, "/chart");
+    if(items.indexOf(item) > -1){
+      Application.router.navigateTo(context, '/$item');
     }
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
