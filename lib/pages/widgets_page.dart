@@ -17,7 +17,13 @@ class WidgetPageState extends State<WidgetPage>{
           title: Text("Widget"),
         ),
         body:Center(
-          child: Text("WidgetPage"),
+          child:ClipOval(
+            child:SizedBox(
+              width: 100.0,
+              height:100.0,
+              child:Image.network("https://image-static.segmentfault.com/179/909/1799097727-5b127e854e508",fit: BoxFit.fill,),
+            ),
+          ),
         )
       );
   }
