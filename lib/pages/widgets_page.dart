@@ -16,15 +16,37 @@ class WidgetPageState extends State<WidgetPage>{
        appBar: AppBar(
           title: Text("Widget"),
         ),
-        body:Center(
-          child:ClipOval(
-            child:SizedBox(
-              width: 100.0,
-              height:100.0,
-              child:Image.network("https://image-static.segmentfault.com/179/909/1799097727-5b127e854e508",fit: BoxFit.fill,),
-            ),
-          ),
+        body:
+        Container(
+          alignment: Alignment.center,
+          child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+              ClipOval(
+                child:SizedBox(
+                  width: 100.0,
+                  height:100.0,
+                  child:Image.network("https://inews.gtimg.com/newsapp_bt/0/3744524785/641",fit: BoxFit.fill,),
+                ),
+              ),
+            ClipRRect(
+              borderRadius:BorderRadius.all(
+                  Radius.circular(10.0),
+              ),
+              child: SizedBox(
+                width: 150.0,
+                height:150.0,
+                child:Image.network("https://inews.gtimg.com/newsapp_bt/0/3744524785/641",fit: BoxFit.fill,),
+
+              ),
+            )
+          ],
         )
+        )
+        
+
+        
       );
   }
 }
