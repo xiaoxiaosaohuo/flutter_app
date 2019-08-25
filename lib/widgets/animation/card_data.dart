@@ -29,6 +29,26 @@ final List<CardViewModel> demoCards = [
     windSpeedInMph: 19.9,
     cardinalDirection: "W",
   ),
+  new CardViewModel(
+    backdropAssetPath: 'assets/images/girl.jpeg',
+    address: 'BELLS BEACH',
+    minHeightInFeet: 0,
+    maxHeightInFeet: 8,
+    tempInDegrees: 88.0,
+    weatherType: "Sunny",
+    windSpeedInMph: 19.9,
+    cardinalDirection: "R",
+  ),
+  new CardViewModel(
+    backdropAssetPath: 'assets/images/1.jpg',
+    address: '歌川国芳',
+    minHeightInFeet: 0,
+    maxHeightInFeet: 8,
+    tempInDegrees: 99.0,
+    weatherType: "Sunny",
+    windSpeedInMph: 2.9,
+    cardinalDirection: "R",
+  ),
 ];
 
 class CardViewModel {
