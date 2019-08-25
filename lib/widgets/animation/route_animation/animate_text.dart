@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class AppText extends StatelessWidget {
+class AnimateText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(

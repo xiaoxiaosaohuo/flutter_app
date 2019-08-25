@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/widgets/animation/route_animation/app_button.dart';
-import 'package:flutter_app/widgets/animation/route_animation/app_text.dart';
+import 'package:flutter_app/widgets/animation/route_animation/animate_button.dart';
+import 'package:flutter_app/widgets/animation/route_animation/animate_text.dart';
 import 'package:flutter_app/widgets/animation/route_animation/header_widget.dart';
 class RouteAnimation extends StatefulWidget {
   @override
@@ -83,12 +83,12 @@ class _RouteAnimationState extends State<RouteAnimation> {
             Expanded(
               child: FractionalTranslation(
                 translation: textTranslation.value,
-                child: AppText(),
+                child: AnimateText(),
               ),
             ),
             FractionalTranslation(
               translation: buttonTranslation.value,
-              child: new Button(),
+              child: AnimateButton(),
             ),
             SizedBox(height: 34.0),
           ],
