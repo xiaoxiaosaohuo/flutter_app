@@ -102,7 +102,7 @@ class WidgetPageState extends State<WidgetPage>{
                 child:SizedBox(
                   width: 100.0,
                   height:100.0,
-                  child:Image.network("https://inews.gtimg.com/newsapp_bt/0/3744524785/641",fit: BoxFit.fill,),
+                  child:Image.asset("assets/images/1.jpg",fit: BoxFit.fill,),
                 ),
               ),
             ClipRRect(
@@ -112,7 +112,7 @@ class WidgetPageState extends State<WidgetPage>{
               child: SizedBox(
                 width: 150.0,
                 height:150.0,
-                child:Image.network("https://inews.gtimg.com/newsapp_bt/0/3744524785/641",fit: BoxFit.fill,),
+                child:Image.asset("assets/images/1.jpg",fit: BoxFit.fill,)
 
               ),
             ),
@@ -121,7 +121,7 @@ class WidgetPageState extends State<WidgetPage>{
                 child:new SizedBox(
                   width: 100.0,
                   height:100.0,
-                  child:  new Image.network("https://inews.gtimg.com/newsapp_bt/0/3744524785/641",fit: BoxFit.fill,),
+                  child: Image.asset("assets/images/1.jpg",fit: BoxFit.fill,)
                 ) ,
               ),
               StaticRatingBar(),
@@ -130,10 +130,7 @@ class WidgetPageState extends State<WidgetPage>{
                 child: new SizedBox(
                   width: 100.0,
                   height: 100.0,
-                  child: new Image.network(
-                    "https://inews.gtimg.com/newsapp_bt/0/3744524785/641",
-                    fit: BoxFit.fill,
-                  ),
+                  child: Image.asset("assets/images/1.jpg",fit: BoxFit.fill,),
                 ),
               ),
               RatingBar(
