@@ -4,6 +4,7 @@ import 'package:flutter_app/pages/LoginPage.dart';
 import 'package:flutter_app/pages/animation_page.dart';
 import 'package:flutter_app/pages/bar_page.dart';
 import 'package:flutter_app/pages/main_page.dart';
+import 'package:flutter_app/pages/animate_route_page.dart';
 // app的首页
 Handler mainHandler = new Handler(
   handlerFunc: (BuildContext context, Map<String, List<String>> params) {
@@ -30,6 +31,14 @@ Handler barPageHandler = new Handler(
 
     String pageName = params['pageName']?.first;
     return new BarPage(name:pageName);
+  },
+);
+
+Handler animateRoutePageHandler = new Handler(
+  handlerFunc: (BuildContext context, Map<String, List<String>> params) {
+
+    String pageName = params['pageName']?.first;
+    return new AnimateRoutePage(name:pageName);
   },
 );
 

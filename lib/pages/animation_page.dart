@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-
+import 'package:fluro/fluro.dart';
 import 'package:flutter_app/widgets/animation/animate01.dart';
 import 'package:flutter_app/widgets/animation/animate02.dart';
 import '../routers/application.dart';
-
+import 'package:flutter_app/routers/routers.dart';
 
 class AnimationPage extends StatefulWidget{
   AnimationPage();
@@ -15,12 +15,29 @@ class AnimationPage extends StatefulWidget{
 
 class AnimationPageState extends State<AnimationPage>{
 
-  final List<String> items = <String>['bar','stack_bar', 'group_bar', 'group_stack_bar'];
-  final List<int> colorCodes = <int>[900, 700, 500,300];
+  final List<String> items = <String>['bar','stack_bar', 'group_bar', 'group_stack_bar','animate_route'];
+  final List<int> colorCodes = <int>[900, 800, 600,500,400];
 
   onPressed(item){
     if(items.indexOf(item) > -1){
-      Application.router.navigateTo(context, '/bar_page?pageName=$item',);
+      final bool isBar = item.indexOf('bar') > -1;
+      final page = isBar ? 'bar_page' :'animate_route_page';
+      var transition = (BuildContext context, Animation<double> animation,
+        Animation<double> secondaryAnimation, Widget child) {
+          return child;
+      };
+      if (isBar) {
+        return Application.router.navigateTo(context, '/$page?pageName=$item',);
+      }else{
+        return Application.router.navigateTo(
+          context, Routes.animateRoutePage + "?pageName=$item",
+          transition: TransitionType.custom, /// 指定是自定义动画
+          transitionBuilder: transition, /// 自定义的动画
+          transitionDuration: const Duration(seconds: 3), /// 时间
+        );
+      }
+      
+      
     }
   }
 
