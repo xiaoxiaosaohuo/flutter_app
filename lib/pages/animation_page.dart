@@ -33,7 +33,7 @@ class AnimationPageState extends State<AnimationPage>{
           context, Routes.animateRoutePage + "?pageName=$item",
           transition: TransitionType.custom, /// 指定是自定义动画
           transitionBuilder: transition, /// 自定义的动画
-          transitionDuration: const Duration(seconds: 3), /// 时间
+          transitionDuration: const Duration(milliseconds: 1500), /// 时间
         );
       }
       

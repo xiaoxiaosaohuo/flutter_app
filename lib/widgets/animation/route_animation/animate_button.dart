@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Button extends StatelessWidget {
-  const Button({
+class AnimateButton extends StatelessWidget {
+  const AnimateButton({
     Key key,
   }) : super(key: key);
 
