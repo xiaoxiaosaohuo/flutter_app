@@ -43,6 +43,14 @@ flutter:
     - assets/images/van_on_beach.jpg
     - assets/images/dusk_waves.jpg
     - assets/images/board_walk.jpg
+    - assets/images/italy01.jpg
+    - assets/images/italy02.jpg
+    - assets/images/italy03.jpg
+    - assets/images/italy04.jpg
+    - assets/images/italy05.jpg
+    - assets/images/italy06.jpg
+    - assets/images/italy07.jpg
+    - assets/images/italy08.jpg
   fonts:
      - family: petita
        fonts:
