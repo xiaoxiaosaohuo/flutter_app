@@ -126,7 +126,7 @@ class BarChartPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    final paint = Paint()..style = PaintingStyle.fill;
+    final Paint paint = Paint()..style = PaintingStyle.fill;
     final chart = animation.value;
     for (final bar in chart.bars) {
       paint.color = bar.color;
