@@ -15,8 +15,8 @@ class AnimationPage extends StatefulWidget{
 
 class AnimationPageState extends State<AnimationPage>{
 
-  final List<String> items = <String>['bar','stack_bar', 'group_bar', 'group_stack_bar','animate_route'];
-  final List<int> colorCodes = <int>[900, 800, 600,500,400];
+  final List<String> items = <String>['bar','stack_bar', 'group_bar', 'group_stack_bar','animate_route','card'];
+  final List<int> colorCodes = <int>[900, 800, 600,500,400,300];
 
   onPressed(item){
     if(items.indexOf(item) > -1){
@@ -28,13 +28,15 @@ class AnimationPageState extends State<AnimationPage>{
       };
       if (isBar) {
         return Application.router.navigateTo(context, '/$page?pageName=$item',);
-      }else{
+      }else if(item == 'animate_route'){
         return Application.router.navigateTo(
           context, Routes.animateRoutePage + "?pageName=$item",
           transition: TransitionType.custom, /// 指定是自定义动画
           transitionBuilder: transition, /// 自定义的动画
           transitionDuration: const Duration(milliseconds: 1500), /// 时间
         );
+      }else{
+         return Application.router.navigateTo(context, '/animate_card_page?pageName=$item',);
       }
       
       

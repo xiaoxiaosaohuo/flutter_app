@@ -40,6 +40,9 @@ flutter:
   assets:
     - assets/images/1.jpg
     - assets/images/girl.jpeg
+    - assets/images/van_on_beach.jpg
+    - assets/images/dusk_waves.jpg
+    - assets/images/board_walk.jpg
   fonts:
      - family: petita
        fonts:
