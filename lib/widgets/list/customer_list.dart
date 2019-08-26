@@ -52,24 +52,17 @@ class SliverCustomHeaderDelegate extends SliverPersistentHeaderDelegate {
   }
 
   void updateStatusBarBrightness(shrinkOffset) {
-    final int alpha = (shrinkOffset / (this.maxExtent - this.minExtent) * 255).clamp(0, 255).toInt();
-    final color = Color.fromARGB(alpha, 255, 255, 255);
-
     if(shrinkOffset > 50 && this.statusBarMode == 'dark') {
       this.statusBarMode = 'light';
-     
       SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
         statusBarBrightness: Brightness.light,
         statusBarIconBrightness: Brightness.light,
-        systemNavigationBarColor: Colors.red,
-        statusBarColor:color
       ));
     } else if(shrinkOffset <= 50 && this.statusBarMode == 'light') {
       this.statusBarMode = 'dark';
       SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
         statusBarBrightness: Brightness.dark,
         statusBarIconBrightness: Brightness.dark,
-       statusBarColor:color
       ));
     }
   }
