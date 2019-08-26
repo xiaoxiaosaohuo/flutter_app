@@ -353,7 +353,6 @@ class _CardFlipperState extends State<CardFlipper> with TickerProviderStateMixin
     final cardScrollPercent = scrollPercent * cardCount;
     final parallax = scrollPercent - (cardIndex / widget.cards.length);
 
-    print('卧槽啊999==$cardIndex===${cardIndex - cardScrollPercent}');
     return FractionalTranslation(
       translation: Offset(cardIndex - cardScrollPercent,0.0),
       child: Padding(
