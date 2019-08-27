@@ -22,7 +22,8 @@ class _StickyListState extends State<StickyList>
 
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
+    return Scaffold(
+      body:CustomScrollView(
         slivers: <Widget>[
           SliverAppBar(
             pinned: true,
@@ -59,6 +60,7 @@ class _StickyListState extends State<StickyList>
             ),
           ),
         ],
+      ),
     );
   }
 }

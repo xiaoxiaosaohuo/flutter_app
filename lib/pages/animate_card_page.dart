@@ -17,10 +17,14 @@ class AnimateCardPage extends StatefulWidget {
 }
 
 class _AnimateCardPageState extends State<AnimateCardPage> {
+
   double scrollPercent = 0.0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.name),
+      ),
       backgroundColor: Colors.black,
       body: SafeArea(
         child: Column(
