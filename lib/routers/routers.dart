@@ -13,6 +13,10 @@ class Routes{
   static String basicListPage = '/basic_list';
   static String stickyListPage = '/sticky_list';
   static String customerListPage = '/customer_list';
+  static String bottomDrawer = '/bottom_drawer';
+  static String nestList = '/nest_list';
+
+
   static void configureRoutes(Router router) {
     router.notFoundHandler = new Handler(
         handlerFunc: (BuildContext context, Map<String, List<String>> params) {
@@ -28,6 +32,7 @@ class Routes{
     router.define(basicListPage,handler:basicListPageHandler);
     router.define(stickyListPage,handler:stickyListPageHandler);
     router.define(customerListPage,handler:customerListPageHandler);
-    
+    router.define(bottomDrawer,handler:bottomDrawerPageHandler);
+    router.define(nestList,handler:nestListPageHandler);
   }
 }
