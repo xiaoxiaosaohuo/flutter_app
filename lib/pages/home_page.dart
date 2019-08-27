@@ -15,6 +15,15 @@ final List<DemoViewModal> demos = [
     title: 'customer_list',
     route: 'customer_list',
   ),
+  DemoViewModal(
+    title: 'drawer',
+    route: 'bottom_drawer',
+  ),
+  DemoViewModal(
+    title: 'nestList',
+    route: 'nest_list',
+  ),
+  
 ];
 
 class DemoViewModal {
