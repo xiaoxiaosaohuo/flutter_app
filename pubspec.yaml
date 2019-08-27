@@ -28,6 +28,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   english_words: ^3.1.0
+  random_color: ^1.0.3
 # For information on the generic Dart part of this file, see the
 # following page: https://www.dartlang.org/tools/pub/pubspec
 
