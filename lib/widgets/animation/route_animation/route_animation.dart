@@ -52,7 +52,7 @@ class _RouteAnimationState extends State<RouteAnimation> {
         ),
       );
       buttonTranslation = Tween(
-        begin: Offset(0.0, 1.0),
+        begin: Offset(0.0, 2.0),
         end: Offset(0.0, 0.0),
       ).animate(
         CurvedAnimation(
