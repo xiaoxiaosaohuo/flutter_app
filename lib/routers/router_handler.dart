@@ -6,6 +6,9 @@ import 'package:flutter_app/pages/bar_page.dart';
 import 'package:flutter_app/pages/main_page.dart';
 import 'package:flutter_app/pages/animate_route_page.dart';
 import 'package:flutter_app/pages/animate_card_page.dart';
+import 'package:flutter_app/widgets/sliver_list/basic_list.dart';
+import 'package:flutter_app/widgets/sliver_list/customer_list.dart';
+import 'package:flutter_app/widgets/sliver_list/sticky_list.dart';
 // app的首页
 Handler mainHandler = new Handler(
   handlerFunc: (BuildContext context, Map<String, List<String>> params) {
@@ -47,6 +50,30 @@ Handler animateCardPageHandler = new Handler(
 
     String pageName = params['pageName']?.first;
     return AnimateCardPage(name:pageName);
+  },
+);
+
+Handler basicListPageHandler = new Handler(
+  handlerFunc: (BuildContext context, Map<String, List<String>> params) {
+
+    String pageName = params['pageName']?.first;
+    return BasicList(title:pageName);
+  },
+);
+
+Handler stickyListPageHandler = new Handler(
+  handlerFunc: (BuildContext context, Map<String, List<String>> params) {
+
+    String pageName = params['pageName']?.first;
+    return StickyList(title:pageName);
+  },
+);
+
+Handler customerListPageHandler = new Handler(
+  handlerFunc: (BuildContext context, Map<String, List<String>> params) {
+
+    // String pageName = params['pageName']?.first;
+    return CustomSliverList();
   },
 );
 

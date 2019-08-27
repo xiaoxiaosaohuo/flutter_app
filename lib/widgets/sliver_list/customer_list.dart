@@ -4,7 +4,8 @@ import 'package:flutter/services.dart';
 class CustomSliverList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
+    return Scaffold(
+      body:CustomScrollView(
         slivers: <Widget>[
           SliverPersistentHeader(
             pinned: true,
@@ -20,6 +21,7 @@ class CustomSliverList extends StatelessWidget {
             child: FilmContent(),
           )
         ],
+    ),
     );
   }
 }

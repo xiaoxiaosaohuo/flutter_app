@@ -32,7 +32,11 @@ class BasicList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(title),
+      ),
+      body: CustomScrollView(
         slivers: <Widget>[
           this.renderTitle('SliverGrid'),
           SliverGrid.count(
@@ -48,6 +52,8 @@ class BasicList extends StatelessWidget {
             itemExtent: 100,
           ),
         ],
-      );
+      ),
+    );
+    
   }
 }

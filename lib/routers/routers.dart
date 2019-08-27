@@ -10,6 +10,9 @@ class Routes{
   static String barPage = '/bar_page';
   static String animateRoutePage = '/animate_route_page';
   static String animateCardPage = '/animate_card_page';
+  static String basicListPage = '/basic_list';
+  static String stickyListPage = '/sticky_list';
+  static String customerListPage = '/customer_list';
   static void configureRoutes(Router router) {
     router.notFoundHandler = new Handler(
         handlerFunc: (BuildContext context, Map<String, List<String>> params) {
@@ -22,6 +25,9 @@ class Routes{
     router.define(barPage,handler:barPageHandler);
     router.define(animateRoutePage,handler:animateRoutePageHandler);
     router.define(animateCardPage,handler:animateCardPageHandler);
+    router.define(basicListPage,handler:basicListPageHandler);
+    router.define(stickyListPage,handler:stickyListPageHandler);
+    router.define(customerListPage,handler:customerListPageHandler);
     
   }
 }
