@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/pages/bottom_drawer.dart';
-
+import 'package:flutter_app/widgets/fliter_menu/diagonal_clipper.dart';
 DragController controller = DragController();
 
 class BottomDrawerPage extends StatefulWidget {
@@ -10,86 +10,58 @@ class BottomDrawerPage extends StatefulWidget {
 }
 
 class _BottomDrawerPageState extends State<BottomDrawerPage> {
+
+  double _imageHeight = 256.0;
+
  @override
  Widget build(BuildContext context) {
-   return Scaffold(
-     appBar: AppBar(
-       title: Text('抽屉'),
-     ),
-     body: BottomDrawer(
-       body: Container(
-         color: Colors.brown,
-         child: ListView.builder(itemBuilder: (BuildContext context, int index){
-           return Text('我是listview下面一层的东东，index=$index');
-         }, itemCount: 100,),
-       ),
-       dragContainer: DragContainer(
-        //  controller: controller,
-         drawer: getListView(),
-         defaultShowHeight: 150.0,
-         height: 700.0,
-       )),
-   );
-   
- }
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Filter Menu'),
+      ),
+      body: Stack(
+        children: <Widget>[
+          buildImage(),
+          _buildTopHeader(),
+        ]
+      ),
+    );
+  }
 
- Widget getListView() {
-   return Container(
-     height:600.0,
+  Widget buildImage(){
+    return ClipPath(
+      clipper: DialogonalClipper(),
+      child:Image.asset(
+        'assets/images/italy01.jpg',
+        fit: BoxFit.fitHeight,
+        height: _imageHeight,
+        colorBlendMode: BlendMode.srcOver,
+        color: Color.fromARGB(120, 20, 10, 40),
+      )
+    ) ;
+  }
 
-     ///总高度
-     color: Colors.amberAccent,
-     child: Column(
-       children: <Widget>[
-         Container(
-           color: Colors.deepOrangeAccent,
-           height: 40.0,
-         ),
-         Expanded(child: newListView())
-       ],
-     ),
-   );
- }
-
- Widget newListView() {
-
-   return OverscrollNotificationWidget(
-     child: ListView.builder(
-       itemBuilder: (BuildContext context, int index) {
-         return Text('data=$index');
-       },
-       itemCount: 100,
-       ///这个属性是用来断定滚动的部件的物理特性，例如：
-       ///scrollStart
-       ///ScrollUpdate
-       ///Overscroll
-       ///ScrollEnd
-       ///在Android和ios等平台，其默认值是不同的。我们可以在scroll_configuration.dart中看到如下配置
-
-///下面代码是我在翻源码找到的解决方案
-/// The scroll physics to use for the platform given by [getPlatform].
-       ///
-       /// Defaults to [BouncingScrollPhysics] on iOS and [ClampingScrollPhysics] on
-       /// Android.
-//  ScrollPhysics getScrollPhysics(BuildContext context) {
-//    switch (getPlatform(context)) {
-//    case TargetPlatform.iOS:/*/
-//         return const BouncingScrollPhysics();
-//    case TargetPlatform.android:
-//    case TargetPlatform.fuchsia:
-//        return const ClampingScrollPhysics();
-//    }
-//    return null;
-//  }
-       ///在ios中，默认返回BouncingScrollPhysics，对于[BouncingScrollPhysics]而言，
-       ///由于   double applyBoundaryConditions(ScrollMetrics position, double value) => 0.0;
-       ///会导致：当listview的第一条目显示时，继续下拉时，不会调用上面提到的Overscroll监听。
-       ///故这里，设定为[ClampingScrollPhysics]
-       physics: const ClampingScrollPhysics(),
-     ),
-    //  scrollListener: _scrollListener,
-   );
- }
-
- 
+  Widget _buildTopHeader (){
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 32.0),
+      child: Row(
+        children: <Widget>[
+          Icon(Icons.menu,size: 32.0,color:Colors.white,),
+          new Expanded(
+          child: new Padding(
+            padding: const EdgeInsets.only(left: 8.0),
+            child: new Text(
+              "Timeline",
+              style: new TextStyle(
+                  fontSize: 20.0,
+                  color: Colors.white,
+                  fontWeight: FontWeight.w300),
+            ),
+          ),
+        ),
+        new Icon(Icons.linear_scale, color: Colors.white),
+        ],
+      ),
+    );
+  }
 }
