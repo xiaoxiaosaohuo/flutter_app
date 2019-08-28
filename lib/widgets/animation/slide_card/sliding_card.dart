@@ -45,6 +45,12 @@ class _SlidingCardsViewState extends State<SlidingCardsView> {
             assetName: 'rodion-kutsaev.jpeg',
             offset: pageOffset - 1,
           ),
+          SlidingCard(
+            name: 'Prostitute, DongGuan Kong and Macao',
+            date: '3.01-09',
+            assetName: 'italy08.jpg',
+            offset: pageOffset - 2,
+          ),
         ],
       ),
     );
