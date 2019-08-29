@@ -16,8 +16,8 @@ final List<DemoViewModal> demos = [
     route: 'customer_list',
   ),
   DemoViewModal(
-    title: 'drawer',
-    route: 'bottom_drawer',
+    title: 'filterMenu',
+    route: 'filter_menu',
   ),
   DemoViewModal(
     title: 'nestList',

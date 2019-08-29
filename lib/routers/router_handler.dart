@@ -9,7 +9,7 @@ import 'package:flutter_app/pages/animate_card_page.dart';
 import 'package:flutter_app/widgets/sliver_list/basic_list.dart';
 import 'package:flutter_app/widgets/sliver_list/customer_list.dart';
 import 'package:flutter_app/widgets/sliver_list/sticky_list.dart';
-import 'package:flutter_app/pages/bottom_drawer_page.dart';
+import 'package:flutter_app/widgets/fliter_menu/fliter_menu_page.dart';
 import 'package:flutter_app/widgets/sliver_list/nest_list.dart';
 // app的首页
 Handler mainHandler = new Handler(
@@ -88,11 +88,11 @@ Handler nestListPageHandler = new Handler(
 );
 
 
-Handler bottomDrawerPageHandler = new Handler(
+Handler fliterMenuPagePageHandler = new Handler(
   handlerFunc: (BuildContext context, Map<String, List<String>> params) {
 
     // String pageName = params['pageName']?.first;
-    return BottomDrawerPage();
+    return FliterMenuPage();
   },
 );
 
