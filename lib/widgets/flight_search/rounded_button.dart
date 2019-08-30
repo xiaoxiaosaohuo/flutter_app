@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class RoundedButton extends StatelessWidget {
   final String text;
   final bool selected;
@@ -16,23 +15,19 @@ class RoundedButton extends StatelessWidget {
     return Expanded(
       child: Padding(
         padding: const EdgeInsets.all(4.0),
-        child: InkWell(
-          onTap: () {
-            Scaffold.of(context).showSnackBar(new SnackBar(
-              content: new Text(text),
-            ));
-          },
-          child: Container(
+        child: new InkWell(
+          onTap: onTap,
+          child: new Container(
             height: 36.0,
-            decoration: BoxDecoration(
+            decoration: new BoxDecoration(
               color: backgroundColor,
-              border: Border.all(color: Colors.white, width: 1.0),
-              borderRadius: BorderRadius.circular(30.0),
+              border: new Border.all(color: Colors.white, width: 1.0),
+              borderRadius: new BorderRadius.circular(30.0),
             ),
-            child: Center(
-              child: Text(
+            child: new Center(
+              child: new Text(
                 text,
-                style: TextStyle(color: textColor),
+                style: new TextStyle(color: textColor),
               ),
             ),
           ),

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/widgets/flight_search/air_sia_bar.dart';
 import 'package:flutter_app/widgets/flight_search/rounded_button.dart';
+import 'package:flutter_app/widgets/flight_search/content_card.dart';
+
 class FlightSearchPage extends StatelessWidget {
   const FlightSearchPage({Key key}) : super(key: key);
 
@@ -17,7 +19,7 @@ class FlightSearchPage extends StatelessWidget {
                 child: Column(
                   children: <Widget>[
                     _buildButtonsRow(),
-                    Container(), 
+                    Expanded(child: ContentCard()),
                   ],
                 ),
               ),
