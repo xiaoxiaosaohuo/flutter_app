@@ -52,3 +52,6 @@ flutter:
      - family: gidole
        fonts:
          - asset: assets/fonts/Gidole-Regular.ttf
+     - family: NothingYouCouldDo
+       fonts:
+         - asset: assets/fonts/NothingYouCouldDo.ttf

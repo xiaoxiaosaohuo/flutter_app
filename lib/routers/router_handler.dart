@@ -11,6 +11,7 @@ import 'package:flutter_app/widgets/sliver_list/customer_list.dart';
 import 'package:flutter_app/widgets/sliver_list/sticky_list.dart';
 import 'package:flutter_app/widgets/fliter_menu/fliter_menu_page.dart';
 import 'package:flutter_app/widgets/sliver_list/nest_list.dart';
+import 'package:flutter_app/widgets/flight_search/index.dart';
 // app的首页
 Handler mainHandler = new Handler(
   handlerFunc: (BuildContext context, Map<String, List<String>> params) {
@@ -93,6 +94,14 @@ Handler fliterMenuPagePageHandler = new Handler(
 
     // String pageName = params['pageName']?.first;
     return FliterMenuPage();
+  },
+);
+
+Handler flightSearchPagePageHandler = new Handler(
+  handlerFunc: (BuildContext context, Map<String, List<String>> params) {
+
+    // String pageName = params['pageName']?.first;
+    return FlightSearchPage();
   },
 );
 

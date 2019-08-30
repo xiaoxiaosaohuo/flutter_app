@@ -15,6 +15,7 @@ class Routes{
   static String customerListPage = '/customer_list';
   static String filterMenu = '/filter_menu';
   static String nestList = '/nest_list';
+  static String flightSearch = 'flight_search';
 
 
   static void configureRoutes(Router router) {
@@ -34,5 +35,6 @@ class Routes{
     router.define(customerListPage,handler:customerListPageHandler);
     router.define(filterMenu,handler:fliterMenuPagePageHandler);
     router.define(nestList,handler:nestListPageHandler);
+    router.define(flightSearch,handler:flightSearchPagePageHandler);
   }
 }

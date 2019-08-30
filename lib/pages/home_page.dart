@@ -23,6 +23,10 @@ final List<DemoViewModal> demos = [
     title: 'nestList',
     route: 'nest_list',
   ),
+  DemoViewModal(
+    title: 'flightSearch',
+    route: 'flight_search',
+  ),
   
 ];
 
