@@ -10,44 +10,43 @@ class TaskRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new FadeTransition(
+    return  FadeTransition(
       opacity: animation,
-      child: new SizeTransition(
+      child:  SizeTransition(
         sizeFactor: animation,
-        child: new Padding(
+        child:  Padding(
           padding: const EdgeInsets.symmetric(vertical: 16.0),
-          child: new Row(
+          child:  Row(
             children: <Widget>[
-              new Padding(
-                padding:
-                    new EdgeInsets.symmetric(horizontal: 32.0 - dotSize / 2),
-                child: new Container(
+               Padding(
+                padding:EdgeInsets.symmetric(horizontal: 32.0 - dotSize / 2),
+                child:  Container(
                   height: dotSize,
                   width: dotSize,
-                  decoration: new BoxDecoration(
+                  decoration:  BoxDecoration(
                       shape: BoxShape.circle, color: task.color),
                 ),
               ),
-              new Expanded(
-                child: new Column(
+               Expanded(
+                child:  Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    new Text(
+                     Text(
                       task.name,
-                      style: new TextStyle(fontSize: 18.0),
+                      style:  TextStyle(fontSize: 18.0),
                     ),
-                    new Text(
+                     Text(
                       task.category,
-                      style: new TextStyle(fontSize: 12.0, color: Colors.grey),
+                      style:  TextStyle(fontSize: 12.0, color: Colors.grey),
                     )
                   ],
                 ),
               ),
-              new Padding(
+               Padding(
                 padding: const EdgeInsets.only(right: 16.0),
-                child: new Text(
+                child:  Text(
                   task.time,
-                  style: new TextStyle(fontSize: 12.0, color: Colors.grey),
+                  style:  TextStyle(fontSize: 12.0, color: Colors.grey),
                 ),
               ),
             ],
