@@ -29,11 +29,11 @@ class TicketCard extends StatelessWidget {
 
   Container _buildCardContent() {
     TextStyle airportNameStyle =
-        new TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600);
+         TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600);
     TextStyle airportShortNameStyle =
-        new TextStyle(fontSize: 36.0, fontWeight: FontWeight.w200);
+         TextStyle(fontSize: 36.0, fontWeight: FontWeight.w200);
     TextStyle flightNumberStyle =
-        new TextStyle(fontSize: 12.0, fontWeight: FontWeight.w500);
+         TextStyle(fontSize: 12.0, fontWeight: FontWeight.w500);
     return Container(
       height: 104.0,
       child: Row(
@@ -96,7 +96,7 @@ class TicketClipper extends CustomClipper<Path> {
 
   @override
   Path getClip(Size size) {
-    var path = new Path();
+    var path =  Path();
     path.lineTo(0.0, size.height);
     path.lineTo(size.width, size.height);
     path.lineTo(size.width, 0.0);

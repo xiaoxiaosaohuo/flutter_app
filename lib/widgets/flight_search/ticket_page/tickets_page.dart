@@ -11,10 +11,10 @@ class TicketsPage extends StatefulWidget {
 class _TicketsPageState extends State<TicketsPage>
     with TickerProviderStateMixin {
   List<FlightStopTicket> stops = [
-    new FlightStopTicket("Sahara", "SHE", "Macao", "MAC", "SE2341"),
-    new FlightStopTicket("Macao", "MAC", "Cape Verde", "CAP", "KU2342"),
-    new FlightStopTicket("Cape Verde", "CAP", "Ireland", "IRE", "KR3452"),
-    new FlightStopTicket("Ireland", "IRE", "Sahara", "SHE", "MR4321"),
+     FlightStopTicket("Sahara", "SHE", "Macao", "MAC", "SE2341"),
+     FlightStopTicket("Macao", "MAC", "Cape Verde", "CAP", "KU2342"),
+     FlightStopTicket("Cape Verde", "CAP", "Ireland", "IRE", "KR3452"),
+     FlightStopTicket("Ireland", "IRE", "Sahara", "SHE", "MR4321"),
   ];
   AnimationController cardEntranceAnimationController;
   List<Animation> ticketAnimations;
@@ -23,7 +23,7 @@ class _TicketsPageState extends State<TicketsPage>
   @override
   void initState() {
     super.initState();
-    cardEntranceAnimationController = new AnimationController(
+    cardEntranceAnimationController =  AnimationController(
       vsync: this,
       duration: Duration(milliseconds: 1100),
     );
@@ -32,12 +32,12 @@ class _TicketsPageState extends State<TicketsPage>
       double start = index * 0.1;
       double duration = 0.6;
       double end = duration + start;
-      return new Tween<double>(begin: 800.0, end: 0.0).animate(
-          new CurvedAnimation(
+      return  Tween<double>(begin: 800.0, end: 0.0).animate(
+           CurvedAnimation(
               parent: cardEntranceAnimationController,
-              curve: new Interval(start, end, curve: Curves.decelerate)));
+              curve:  Interval(start, end, curve: Curves.decelerate)));
     }).toList();
-    fabAnimation = new CurvedAnimation(
+    fabAnimation =  CurvedAnimation(
         parent: cardEntranceAnimationController,
         curve: Interval(0.7, 1.0, curve: Curves.decelerate));
     cardEntranceAnimationController.forward();
@@ -52,7 +52,7 @@ class _TicketsPageState extends State<TicketsPage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: new Stack(
+      body:  Stack(
         children: <Widget>[
           AirAsiaBar(
             height: 180.0,
@@ -60,7 +60,7 @@ class _TicketsPageState extends State<TicketsPage>
           Positioned.fill(
             top: MediaQuery.of(context).padding.top + 64.0,
             child: SingleChildScrollView(
-              child: new Column(
+              child:  Column(
                 children: _buildTickets().toList(),
               ),
             ),
@@ -81,7 +81,7 @@ class _TicketsPageState extends State<TicketsPage>
           padding: const EdgeInsets.symmetric(vertical: 4.0, horizontal: 8.0),
           child: TicketCard(stop: stop),
         ),
-        builder: (context, child) => new Transform.translate(
+        builder: (context, child) =>  Transform.translate(
               offset: Offset(0.0, ticketAnimations[index].value),
               child: child,
             ),
@@ -94,7 +94,7 @@ class _TicketsPageState extends State<TicketsPage>
       scale: fabAnimation,
       child: FloatingActionButton(
         onPressed: () => Navigator.of(context).pop(),
-        child: new Icon(Icons.fingerprint),
+        child:  Icon(Icons.fingerprint),
       ),
     );
   }

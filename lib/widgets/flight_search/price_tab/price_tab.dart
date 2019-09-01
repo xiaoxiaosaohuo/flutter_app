@@ -93,6 +93,7 @@ class _PriceTabState extends State<PriceTab> with TickerProviderStateMixin {
     double topMargin = _dotPositions[index].value -
         0.5 * (FlightStopCard.height - AnimatedDot.size);
     bool isLeft = index.isOdd;
+
     return Align(
       alignment: Alignment.topCenter,
       child: Padding(
