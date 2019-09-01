@@ -73,6 +73,7 @@ class _TicketsPageState extends State<TicketsPage>
   }
 
   Iterable<Widget> _buildTickets() {
+    
     return stops.map((stop) {
       int index = stops.indexOf(stop);
       return AnimatedBuilder(
