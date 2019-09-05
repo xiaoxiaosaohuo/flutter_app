@@ -27,6 +27,10 @@ final List<DemoViewModal> demos = [
     title: 'flightSearch',
     route: 'flight_search',
   ),
+  DemoViewModal(
+    title: 'video',
+    route: 'video',
+  ),
   
 ];
 

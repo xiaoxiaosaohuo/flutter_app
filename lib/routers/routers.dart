@@ -17,6 +17,8 @@ class Routes{
   static String nestList = '/nest_list';
   static String flightSearch = 'flight_search';
 
+  static String video = 'video';
+
 
   static void configureRoutes(Router router) {
     router.notFoundHandler = new Handler(
@@ -36,5 +38,6 @@ class Routes{
     router.define(filterMenu,handler:fliterMenuPagePageHandler);
     router.define(nestList,handler:nestListPageHandler);
     router.define(flightSearch,handler:flightSearchPagePageHandler);
+    router.define(video,handler:videoPageHandler);
   }
 }
