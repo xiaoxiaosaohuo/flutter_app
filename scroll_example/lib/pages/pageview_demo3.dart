@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-
+// 自定义pageview 过渡效果
 class PageViewDemo3 extends StatefulWidget {
   @override
   _PageViewDemo3State createState() => _PageViewDemo3State();

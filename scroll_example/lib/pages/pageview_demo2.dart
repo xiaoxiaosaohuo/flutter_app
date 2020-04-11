@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:scroll_example/pages/pageview/dots_indicator.dart';
 
+//  带指示器的轮播
 class PageViewDemo2 extends StatefulWidget {
   @override
   _PageViewDemo2State createState() => _PageViewDemo2State();

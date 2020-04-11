@@ -1,5 +1,12 @@
 import 'package:flutter/material.dart';
 
+// 滚动位置监听 ScrollNotification
+
+// 通过NotificationListener监听滚动事件和通过ScrollController有两个主要的不同：
+
+// - 通过NotificationListener可以在从可滚动组件到widget树根之间任意位置都能监听。而ScrollController只能和具体的可滚动组件关联后才可以。
+// - 收到滚动事件后获得的信息不同；NotificationListener在收到滚动事件时，通知中会携带当前滚动位置和ViewPort的一些信息，而ScrollController只能获取当前滚动位置。
+
 // pixels：当前滚动位置。
 // maxScrollExtent：最大可滚动长度。
 // extentBefore：滑出ViewPort顶部的长度；此示例中相当于顶部滑出屏幕上方的列表长度。
