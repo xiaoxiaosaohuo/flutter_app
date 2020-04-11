@@ -36,7 +36,12 @@ class _PageViewDemo3State extends State<PageViewDemo3> {
           if (position == currentPageValue.floor()) {
             return Transform(
               // transform: Matrix4.identity()..rotateX(currentPageValue - position),
-              transform: Matrix4.identity()..setEntry(3, 2, 0.004)..rotateY(currentPageValue - position)..rotateZ(currentPageValue - position),
+              // transform: Matrix4.identity()..setEntry(3, 2, 0.004)..rotateY(currentPageValue - position)..rotateZ(currentPageValue - position),
+                alignment: Alignment.center,
+                transform: Matrix4.identity()..setEntry(3, 2, 0.001)
+                  ..rotateX(currentPageValue - position)
+                  ..rotateY(currentPageValue - position)
+                  ..rotateZ(currentPageValue - position),
               child: Container(
                 color: position % 2 == 0 ? Colors.blue : Colors.pink,
                 child: Center(
@@ -50,7 +55,12 @@ class _PageViewDemo3State extends State<PageViewDemo3> {
           } else if (position == currentPageValue.floor() + 1){
             return Transform(
               // transform: Matrix4.identity()..rotateX(currentPageValue - position),
-              transform:Matrix4.identity()..setEntry(3, 2, 0.004)..rotateY(currentPageValue - position)..rotateZ(currentPageValue - position),
+              // transform:Matrix4.identity()..setEntry(3, 2, 0.004)..rotateY(currentPageValue - position)..rotateZ(currentPageValue - position),
+              alignment: Alignment.center,
+              transform: Matrix4.identity()..setEntry(3, 2, 0.001)
+                ..rotateX(currentPageValue - position)
+                ..rotateY(currentPageValue - position)
+                ..rotateZ(currentPageValue - position),
               child: Container(
                 color: position % 2 == 0 ? Colors.blue : Colors.pink,
                 child: Center(

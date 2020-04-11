@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:scroll_example/pages/pageview_demo3.dart';
+import 'package:scroll_example/pages/listview_demo2.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: PageViewDemo3(),
+      home: ListViewDemo2(),
     );
   }
 }
