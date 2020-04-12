@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:scroll_example/pages/scrollViewDemo1.dart';
+import 'package:scroll_example/pages/SliverDemo1.dart';
 
 void main() => runApp(MyApp());
 
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: ScrollViewDemo1(),
+      home: SliverDemo1(),
     );
   }
 }
